@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-const SearchBar = ({ onFormSubmit }) => {
+const SearchBar = ({ searchresult }) => {
   const [term, setTerm] = useState('');
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    onFormSubmit(term);
+    searchresult(term);
   };
 
   return (

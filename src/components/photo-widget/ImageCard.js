@@ -10,6 +10,7 @@ const ImageCard = ({ key, image }) => {
 
   useEffect(() => {
     imageRef.current.addEventListener('load', setSpans({ height: itemHeight, value: itemValue }));
+    // eslint-disable-next-line
   }, []);
 
   return (

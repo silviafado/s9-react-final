@@ -3,29 +3,22 @@ import unsplash from '../apis/unsplash';
 import SearchBar from '../components/photo-widget/SearchBar';
 import ImageList from '../components/photo-widget/ImageList';
 
-const Photos = () => {
-    const [selectedVideo, setSelectedVideo] = useState(null);
-    const [videos, search] = useVideos('buildings');
-
-    useEffect(() => {
-        setSelectedVideo(videos[0]);
-    }, [videos]);
-
-    const [images, setImages] = useState([]);
+const Art = () => {
+    const [artworks, setArtworks] = useState([]);
 
     const onSearchSubmit = async term => {
         const response = await unsplash.get('/search/photos', {
-            params: { query: term }
+            params: { query: 'art ' + term }
         });
-        setImages([response.data.results]);
+        setArtworks([response.data.results]);
     };
 
     return (
         <div className="ui container" style={{ marginTop: '10px' }}>
             <SearchBar onSubmit={onSearchSubmit} />
-            <ImageList images={images} />
+            <ImageList images={artworks} />
         </div>
     );
 }
 
-export default Photos;
+export default Art;
