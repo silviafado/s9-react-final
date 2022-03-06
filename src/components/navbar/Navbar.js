@@ -11,7 +11,6 @@ const Navbar = () => {
     return (
         <StylesNav>
             <StylesNavEl><Link to="/">HOME</Link></StylesNavEl>
-            <StylesNavEl ><Link to="/start">SEARCH</Link></StylesNavEl>
             <StylesNavEl><Link to="/photos" onClick={showPhoto}>PHOTOS</Link></StylesNavEl>
             <StylesNavEl><Link to="/videos" showvideo={showVideo.toString()}>VIDEOS</Link></StylesNavEl>
             <StylesNavEl><Link to="/art">ART</Link></StylesNavEl>

@@ -4,12 +4,6 @@ import SearchBar from '../components/photo-widget/SearchBar';
 import ImageList from '../components/photo-widget/ImageList';
 
 const Photos = () => {
-    const [selectedVideo, setSelectedVideo] = useState(null);
-    const [videos, search] = useVideos('buildings');
-
-    useEffect(() => {
-        setSelectedVideo(videos[0]);
-    }, [videos]);
 
     const [images, setImages] = useState([]);
 
@@ -17,7 +11,8 @@ const Photos = () => {
         const response = await unsplash.get('/search/photos', {
             params: { query: term }
         });
-        setImages([response.data.results]);
+        setImages(response.data.results);
+        console.log(images);
     };
 
     return (
