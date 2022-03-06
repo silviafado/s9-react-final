@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const SearchBar = ({ onSubmit, widget }) => {
-  const [term, setTerm] = useState('');
+  const [term, setTerm] = useState('landscape');
 
   const onFormSubmit = event => {
     event.preventDefault();
