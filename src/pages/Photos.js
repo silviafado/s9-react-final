@@ -1,23 +1,13 @@
-import { useState } from 'react';
-import unsplash from '../apis/unsplash';
 import SearchBar from '../components/photo-widget/SearchBar';
 import ImageList from '../components/photo-widget/ImageList';
+import useImages from '../hooks/useImages';
 
 const Photos = () => {
-
-    const [images, setImages] = useState([]);
-
-    const onSearchSubmit = async term => {
-        const response = await unsplash.get('/search/photos', {
-            params: { query: term }
-        });
-        setImages(response.data.results);
-        console.log(images);
-    };
+    const [images, search] = useImages('color');
 
     return (
         <div className="ui container" style={{ marginTop: '10px' }}>
-            <SearchBar onSubmit={onSearchSubmit} />
+            <SearchBar onSubmit={search} />
             <ImageList images={images} />
         </div>
     );

@@ -2,14 +2,14 @@ import { useState, useRef, useEffect } from 'react';
 
 const ImageCard = ({ key, image }) => {
 
-  const [spans, setSpans] = useState(0);
+  const [height, setHeight] = useState(0);
   const imageRef = useRef(image);
   console.log(imageRef);
   const itemHeight = imageRef.current.height;
   const { description, urls } = image;
 
   useEffect(() => {
-    imageRef.current.addEventListener('load', setSpans(itemHeight));
+    imageRef.current.addEventListener('load', setHeight(itemHeight));
     // eslint-disable-next-line
   }, []);
 

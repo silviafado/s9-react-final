@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SearchBar from '../components/video-widget/SearchBar';
 import VideoList from '../components/video-widget/VideoList';
 import VideoDetail from '../components/video-widget/VideoDetail';
@@ -6,7 +6,7 @@ import useVideos from '../hooks/useVideos';
 
 const Videos = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
-    const [videos, search] = useVideos('buildings');
+    const [videos, search] = useVideos('art');
 
     useEffect(() => {
         setSelectedVideo(videos[0]);
