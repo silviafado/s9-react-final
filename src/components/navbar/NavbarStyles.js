@@ -32,6 +32,7 @@ export const StylesNavEl = styled.li`
     flex-grow: 2;
     display: flex;
     justify-content: center;
+    width: 20%;
     & a {
         color: white;
         text-decoration: none;

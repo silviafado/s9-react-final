@@ -4,7 +4,6 @@ const ImageCard = ({ key, image }) => {
 
   const [height, setHeight] = useState(0);
   const imageRef = useRef(image);
-  console.log(imageRef);
   const itemHeight = imageRef.current.height;
   const { description, urls } = image;
 

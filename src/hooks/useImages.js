@@ -14,7 +14,6 @@ const useImages = (defaultSearchTerm) => {
         });
         setImages(response.data.results);
     };
-
     return [images, search];
 };
 
