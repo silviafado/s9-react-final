@@ -1,10 +1,16 @@
-import { TitleStyle, StripeStyle } from './StripeStyles';
+import { TitleStyle, StripeStyle, ButtonStyle } from './StripeStyles';
 
-const Stripe = ({ text }) => {
+const Stripe = ({ text, showRed }) => {
 
     return (
         <StripeStyle>
-            <TitleStyle>{text}</TitleStyle>
+            {showRed ?
+                <a href="/photos/">
+                    <ButtonStyle>
+                        <TitleStyle>{text}</TitleStyle>
+                    </ButtonStyle>
+                </a> :
+                <TitleStyle>{text}</TitleStyle>}
         </StripeStyle>
     )
 }

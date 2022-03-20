@@ -1,21 +1,27 @@
-import { GlobalStyle, StylesHeader, StylesLogo, StylesHome } from '../styled';
+import { ContainerStyle, RedStripe, BlueStripe, YellowStripe, PurpleStripe, GreenStripe } from '../components/welcome/StripeStyles';
+import Stripe from '../components/welcome/Stripe';
 
 const Home = () => {
 
     return (
-        <>
-            <GlobalStyle />
-            <StylesHeader>
-                <StylesLogo />
-            </StylesHeader>
-            <StylesHome>
-                <p>CULTURE & ART</p>
-                <p>Browser</p>
-                <a href="/videos/">
-                    <button>Start fun!!</button>
-                </a>
-            </StylesHome>
-        </>
+        <ContainerStyle>
+            <BlueStripe>
+                <Stripe text={`Art`} />
+            </BlueStripe>
+            <GreenStripe>
+                <Stripe text={`Culture`} />
+            </GreenStripe>
+            <PurpleStripe>
+                <Stripe text={`Imagine`} />
+            </PurpleStripe>
+            <YellowStripe>
+                <Stripe text={`Create`} />
+            </YellowStripe>
+            <RedStripe>
+                <Stripe text={`Start ♥`} showRed={true}>
+                </Stripe>
+            </RedStripe>
+        </ContainerStyle>
     )
 }
 

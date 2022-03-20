@@ -22,6 +22,14 @@ export const StylesNav = styled.ul`
     }
     @media (max-width: 500px) {
         flex-direction: column;
+        position: absolute;
+        z-index: 3;
+        top: 10px;
+        width: 80%;
+        right: 10px;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
     }
 `
 
@@ -54,6 +62,12 @@ export const StylesNavEl = styled.li`
     & .button:hover {
         color: #d1cfcf;
         cursor: pointer;
+    }
+    @media (max-width: 500px) {
+        display: block;
+        align-items: center;
+        background-color:  black;
+        width: 100%;
     }
 `
 

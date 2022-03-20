@@ -8,7 +8,7 @@ const Photos = () => {
     return (
         <div className="ui container" style={{ marginTop: '10px' }}>
             <SearchBar onSubmit={search} />
-            <ImageList images={images} />
+            <ImageList images={images} search={search} />
         </div>
     );
 }
