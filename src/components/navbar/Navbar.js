@@ -1,48 +1,44 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react/cjs/react.development';
 import { StylesNav, StylesNavEl } from './NavbarStyles';
+import useWindowWidth from 'react-hook-use-window-width';
 import LoginModal from '../login/LoginModal';
 import icon from '../../assets/img/menu_icon_mobile.svg';
-import close from '../../assets/img/close_menu_icon.svg';
+import CloseButton from 'react-bootstrap/CloseButton';
+import { useEffect } from 'react';
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import '../../index.css';
 
-const Navbar = () => {
 
-    const [show, setShow] = useState(false);
+const NavbarC = () => {
+
+    const [show, setShow] = useState(true);
+    const width = useWindowWidth();
+    console.log(width);
+
     const showMenu = () => setShow(true);
     const close = () => setShow(false);
-    const [showVideo, setShowVideo] = useState(true);
-    const showPhoto = () => setShowVideo(false);
+
+
+    /*useEffect(() => {
+        if (width < 500) close();
+    }, []);*/
+
 
     return (
-        <>
-            {show ?
-                <StylesNav show={show}>
-                    <StylesNavEl><Link to="/">HOME</Link></StylesNavEl>
-                    <StylesNavEl><Link to="/photos" onClick={showPhoto}>PHOTOS</Link></StylesNavEl>
-                    <StylesNavEl><Link to="/videos" showvideo={showVideo.toString()}>VIDEOS</Link></StylesNavEl>
-                    <StylesNavEl><Link to="/art">ART</Link></StylesNavEl>
-                    <StylesNavEl>
-                        <LoginModal />
-                    </StylesNavEl>
-                </StylesNav> : null}
-            {!show ?
-                <StylesNavEl>
-                    <button onClick={showMenu}>
-                        <img src={icon} alt="menu icon" />
-                    </button>
-                </StylesNavEl> : null}
-            {show ?
-                <>
-                    <StylesNavEl>
-                        <button onClick={close}>
-                            <img src={close} alt="close menu icon" />
-                        </button>
-                    </StylesNavEl>
-                    <StylesNav style={{ alignContent: 'rigth' }} >
-                    </StylesNav>
-                </> : null}
-        </>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                    <Nav.Link href="/">HOME</Nav.Link>
+                    <Nav.Link href="/photos">PHOTOS</Nav.Link>
+                    <Nav.Link href="/videos">VIDEOS</Nav.Link>
+                    <Nav.Link href="/art">ART</Nav.Link>
+                    <Nav><LoginModal /></Nav>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
     )
 }
 
-export default Navbar;
+export default NavbarC;

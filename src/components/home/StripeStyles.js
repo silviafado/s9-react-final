@@ -21,7 +21,6 @@ export const StripeStyle = styled.div`
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    cursor: pointer;
     /* Stripes line effect when not hovering */
     &:before {
         content: "";
@@ -180,6 +179,7 @@ export const RedStripe = styled.div`
     animation-duration: 1s;
     animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
     width: 20%;
+    cursor: pointer;
 `
 
 /* Text styling */

@@ -1,5 +1,5 @@
-import { ContainerStyle, RedStripe, BlueStripe, YellowStripe, PurpleStripe, GreenStripe } from '../components/welcome/StripeStyles';
-import Stripe from '../components/welcome/Stripe';
+import { ContainerStyle, RedStripe, BlueStripe, YellowStripe, PurpleStripe, GreenStripe } from '../components/home/StripeStyles';
+import Stripe from '../components/home/Stripe';
 
 const Home = () => {
 

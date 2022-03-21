@@ -17,10 +17,10 @@ export const StylesModalBox = styled.div`
     width: 400px;
     max-width: calc(100% - 40px);
     max-height: calc(100% - 30px);
-    background-color: #181717;
+    background-color: #a9a6c5;
     border: 1px solid black;
     z-index: 2;
-    box-shadow: 0 0px 6px #15030A;
+    box-shadow: 0 0px 6px #3c394b;
     border-radius: 4px;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -34,21 +34,21 @@ export const StylesBoxAnimmation = styled.div`
 `
 
 export const StylesModal = styled.div`
-    background-color: #181717;
+    background-color: #a9a6c5;
     color: white;
     border: 1px solid black;
     padding: 25px 30px 50px 30px;
 `
 
 export const StylesLogSelect = styled.div`
-    background-color: #181717;
+    background-color: #a9a6c5;
     border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px;
     & :active {
-        background-color: black;
+        background-color: #302d3d;
     }
 `
 
@@ -66,27 +66,35 @@ export const StylesCloseDiv = styled.div`
     margin: 5px;
 `
 
+export const StylesCloseButton = styled.button`
+    background-color: transparent;
+    border: none;
+    color: #302d3d;
+`
+
 export const StlylesLogButton = styled.button`
     all: unset;
     cursor: pointer;
-    color: yellow;
+    color: #ff2c4f;
+    font-weight: bold;
     display: inline-block;
 `
 
 export const StylesLogSelect2 = styled.div`
-    background-color: #181717;
+    background-color: #a9a6c5;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px;
     margin-top: 20px;
     & :active {
-        background-color: black;
+        background-color: #302d3d;
     }
     & .logButton2 {
         all: unset;
         cursor: pointer;
-        color: yellow;
+        color: #ff2c4f;
+        font-weight: bold;
         display: flex;
         justify-content: center;
     }
@@ -102,16 +110,18 @@ export const StylesContainer = styled.div`
 export const StylesModalForm = styled.div`
     & button {
         width: 100%;
-        background-color: grey;
+        background-color: #302d3d;
         color: white;
+        &:hover {
+            color: #ff2c4f;
+        }
     }
 `
 
 export const StylesFormGroup = styled.div`
     margin-bottom: 15px;
     & input:focus {
-        background-color: grey !important;
-        border: 2px solid yellow !important;
+        border: 2px solid #ff2c4f !important;
         color: white !important;
     }
 `
@@ -122,5 +132,13 @@ export const StylesFormInput = styled.input`
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    transition: border-color ease-in-out 0.15s,
+    transition: border-color ease-in-out 0.15s;
+`
+
+export const StylesMenuButton = styled.button`
+    all: unset;
+    cursor: pointer;
+    color: rgba(255,255,255,.55);
+    padding: 7px;
+    padding-left: 20px;
 `

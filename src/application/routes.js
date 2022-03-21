@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, } from 'react-router-dom';
 import Home from '../pages/Home'
-import Navbar from '../components/navbar/Navbar';
+import NavbarC from '../components/navbar/Navbar';
 import Photos from '../pages/Photos';
 import Videos from '../pages/Videos';
 import Art from '../pages/Art';
@@ -10,7 +10,7 @@ const Path = () => {
 
     return (
         <BrowserRouter>
-            <Navbar />
+            <NavbarC />
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route path="/photos/" element={<Photos />} />

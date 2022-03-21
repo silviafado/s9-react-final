@@ -64,7 +64,8 @@ export const StylesNavEl = styled.li`
         cursor: pointer;
     }
     @media (max-width: 500px) {
-        display: block;
+        display: flex;
+        justify-content: center ;
         align-items: center;
         background-color:  black;
         width: 100%;

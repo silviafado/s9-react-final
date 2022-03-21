@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { AppContext } from "../../application/provider";
-import { StylesOverlay, StylesModalBox, StylesBoxAnimmation, StylesModal, StylesModalForm, StylesCloseDiv, StylesLogSelect, StlylesLogButton, StylesLogSelect2, StylesFormGroup, StylesFormInput } from './LoginModalStyles';
+import { StylesOverlay, StylesModalBox, StylesBoxAnimmation, StylesModal, StylesModalForm, StylesCloseDiv, StylesLogSelect, StlylesLogButton, StylesLogSelect2, StylesFormGroup, StylesFormInput, StylesMenuButton } from './LoginModalStyles';
 import 'react-modal-login/dist/react-modal-login.css';
 import CloseButton from 'react-bootstrap/CloseButton';
 
@@ -9,8 +9,6 @@ let usersListArray = JSON.parse(localStorage.getItem("usersList"));
 if (!usersListArray) {
     usersListArray = [];
 }
-//console.log("User list", usersListArray);
-
 
 const LoginModal = () => {
     const [showModal, setShowModal] = useState(false);
@@ -46,7 +44,7 @@ const LoginModal = () => {
                 if (user.email === data.email && user.password === data.password) {
                     closeModal();
                     console.log('You are logged in!');
-                    alert('You are logged in!\nMay the Force be with you!!');
+                    alert('You are logged in!');
                     return true;
                 }
             }
@@ -66,7 +64,7 @@ const LoginModal = () => {
 
     return (
         <div>
-            <button className="button" onClick={openModal}>LOG IN</button>
+            <StylesMenuButton className="button" onClick={openModal}>LOG IN</StylesMenuButton>
 
             {showModal ? (
                 <>
@@ -74,7 +72,7 @@ const LoginModal = () => {
                     <StylesModalBox>
                         <StylesBoxAnimmation>
                             <StylesCloseDiv>
-                                <CloseButton variant="white" aria-label="Close" onClick={closeModal} />
+                                <CloseButton variant="#1d1a27" aria-label="Close" onClick={closeModal} />
                             </StylesCloseDiv>
                             <StylesLogSelect>
                                 <StlylesLogButton onClick={openSignIn}>LOG IN</StlylesLogButton>
