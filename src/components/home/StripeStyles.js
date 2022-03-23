@@ -21,6 +21,7 @@ export const StripeStyle = styled.div`
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative ;
     /* Stripes line effect when not hovering */
     &:before {
         content: "";
