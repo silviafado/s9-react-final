@@ -3,6 +3,7 @@ import SearchBar from '../components/video-widget/SearchBar';
 import VideoList from '../components/video-widget/VideoList';
 import VideoDetail from '../components/video-widget/VideoDetail';
 import useVideos from '../hooks/useVideos';
+import '../components/video-widget/VideoItem.css';
 
 const Videos = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
