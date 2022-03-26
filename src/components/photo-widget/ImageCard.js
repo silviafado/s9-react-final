@@ -4,15 +4,18 @@ const ImageCard = ({ key, image }) => {
 
   const [height, setHeight] = useState(0);
   const imageRef = useRef(image);
-  const itemHeight = imageRef.current.clientHeight;
-  const spans = Math.ceil(itemHeight / 10);
+
   const { description, urls } = image;
 
   useEffect(() => {
 
-    imageRef.current.addEventListener('load', setHeight(spans));
+    imageRef.current.addEventListener('load', () => {
+      const itemHeight = imageRef.current.clientHeight;
+      const spans = Math.ceil(itemHeight / 10);
+      setHeight(spans);
+    });
     // eslint-disable-next-line
-  }, [spans]);
+  }, []);
 
   return (
     <div key={key} style={{ gridRowEnd: `span ${height}` }}>
