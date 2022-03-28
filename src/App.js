@@ -3,11 +3,9 @@ import Provider from './application/provider';
 
 const App = () => {
   return (
-    <>
-      <Provider>
-        <Path />
-      </Provider>
-    </>
+    <Provider>
+      <Path />
+    </Provider>
   )
 }
 

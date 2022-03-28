@@ -1,3 +1,5 @@
+import { StylesSelectedFrame, StylesSelectedText, StylesSelectedHeader } from "./VideoStyles";
+
 const VideoDetail = ({ video }) => {
   if (!video) {
     return <div>Loading...</div>;
@@ -7,13 +9,13 @@ const VideoDetail = ({ video }) => {
 
   return (
     <div>
-      <div className="ui embed">
+      <StylesSelectedFrame>
         <iframe title="video player" src={videoSrc} />
-      </div>
-      <div className="ui segment">
-        <h4 className="ui header">{video.snippet.title}</h4>
+      </StylesSelectedFrame>
+      <StylesSelectedText>
+        <StylesSelectedHeader>{video.snippet.title}</StylesSelectedHeader>
         <p>{video.snippet.description}</p>
-      </div>
+      </StylesSelectedText>
     </div>
   );
 };

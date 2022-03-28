@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import NavbarC from '../components/navbar/Navbar';
 import SearchBar from '../components/video-widget/SearchBar';
 import VideoList from '../components/video-widget/VideoList';
 import VideoDetail from '../components/video-widget/VideoDetail';
 import useVideos from '../hooks/useVideos';
-import '../components/video-widget/VideoItem.css';
+import { StylesContainer, StylesRow, StylesSelectedDiv, StylesList } from '../components/video-widget/VideoStyles';
 
 const Videos = () => {
     const [selectedVideo, setSelectedVideo] = useState(null);
@@ -14,19 +15,22 @@ const Videos = () => {
     }, [videos]);
 
     return (
-        <div className="ui container">
-            <SearchBar searchresult={search} />
-            <div className="ui grid">
-                <div className="ui row">
-                    <div className="eleven wide column">
-                        <VideoDetail video={selectedVideo} />
-                    </div>
-                    <div className="five wide column">
-                        <VideoList onVideoSelect={setSelectedVideo} videos={videos} />
-                    </div>
+        <>
+            <NavbarC />
+            <StylesContainer>
+                <SearchBar searchresult={search} />
+                <div>
+                    <StylesRow>
+                        <StylesSelectedDiv>
+                            <VideoDetail video={selectedVideo} />
+                        </StylesSelectedDiv>
+                        <StylesList>
+                            <VideoList onVideoSelect={setSelectedVideo} videos={videos} />
+                        </StylesList>
+                    </StylesRow>
                 </div>
-            </div>
-        </div>
+            </StylesContainer>
+        </>
     );
 };
 

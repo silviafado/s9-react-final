@@ -1,14 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 
 const ImageCard = ({ key, image }) => {
-
   const [height, setHeight] = useState(0);
   const imageRef = useRef(image);
 
   const { description, urls } = image;
 
   useEffect(() => {
-
     imageRef.current.addEventListener('load', () => {
       const itemHeight = imageRef.current.clientHeight;
       const spans = Math.ceil(itemHeight / 10);

@@ -1,27 +1,23 @@
 import { useState } from 'react';
+import { StylesSearchDiv, StylesForm, StylesInput } from './PhotoStyles';
 
 const SearchBar = ({ onSubmit }) => {
   const [term, setTerm] = useState('');
 
   const onFormSubmit = event => {
     event.preventDefault();
-
     onSubmit(term);
   };
 
   return (
-    <div className="ui segment">
-      <form onSubmit={onFormSubmit} className="ui form">
-        <div className="field">
+    <StylesSearchDiv>
+      <StylesForm onSubmit={onFormSubmit}>
+        <div>
           <label>Image Search</label>
-          <input
-            type="text"
-            value={term}
-            onChange={e => setTerm(e.target.value)}
-          />
+          <StylesInput type="text" value={term} onChange={e => setTerm(e.target.value)} />
         </div>
-      </form>
-    </div>
+      </StylesForm>
+    </StylesSearchDiv>
   );
 
 }

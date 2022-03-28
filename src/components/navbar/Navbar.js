@@ -1,8 +1,6 @@
-import { useState } from 'react/cjs/react.development';
-import useWindowWidth from 'react-hook-use-window-width';
 import LoginModal from '../login/LoginModal';
 import { Nav, Navbar } from "react-bootstrap";
-import '../../index.css';
+import './NavbarStyles.css';
 
 
 const NavbarC = () => {

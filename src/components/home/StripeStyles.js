@@ -9,7 +9,6 @@ export const ContainerStyle = styled.div`
     margin-top: -20px;
 `
 
-
 /* Stripes styling */
 export const StripeStyle = styled.div`
     font-family: 'Lato';

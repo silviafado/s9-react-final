@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { StylesSearchDiv, StylesForm, StylesInput } from '../photo-widget/PhotoStyles';
 
 const SearchBar = ({ searchresult }) => {
   const [term, setTerm] = useState('');
@@ -10,18 +11,14 @@ const SearchBar = ({ searchresult }) => {
   };
 
   return (
-    <div className="search-bar ui segment">
-      <form onSubmit={onSubmit} className="ui form">
-        <div className="field">
+    <StylesSearchDiv>
+      <StylesForm onSubmit={onSubmit}>
+        <div>
           <label>Video Search</label>
-          <input
-            type="text"
-            value={term}
-            onChange={(event) => setTerm(event.target.value)}
-          />
+          <StylesInput type="text" value={term} onChange={(event) => setTerm(event.target.value)} />
         </div>
-      </form>
-    </div>
+      </StylesForm>
+    </StylesSearchDiv>
   );
 };
 
