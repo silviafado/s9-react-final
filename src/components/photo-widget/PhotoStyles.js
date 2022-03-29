@@ -31,6 +31,9 @@ export const StylesForm = styled.form`
     display: block;
     margin-top: 0em;
     margin-bottom: 0px;
+    & label {
+        font-weight: 500;
+    }
 `
 
 export const StylesInput = styled.input`

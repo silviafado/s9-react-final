@@ -141,4 +141,7 @@ export const StylesMenuButton = styled.button`
     color: rgba(255,255,255,.55);
     padding: 7px;
     padding-left: 20px;
+    &:hover {
+        color: white;
+    }
 `

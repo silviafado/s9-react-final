@@ -1,11 +1,11 @@
-import { useContext, createContext } from 'react';
+import { useContext } from 'react';
+import { AppContext } from '../application/provider';
 
 export const useAuth = () => {
-    const AppContext = createContext();
-    console.log(AppContext)
     const [state, setState] = useContext(AppContext);
+    console.log(state)
 
     return {
-        isAuthenticated: !!state.user,
+        isAuthenticated: !!state,
     };
 }

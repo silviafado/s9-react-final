@@ -1,4 +1,5 @@
 import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AppContext } from "../../application/provider";
 import { StylesOverlay, StylesModalBox, StylesBoxAnimmation, StylesModal, StylesModalForm, StylesCloseDiv, StylesLogSelect, StlylesLogButton, StylesLogSelect2, StylesFormGroup, StylesFormInput, StylesMenuButton } from './LoginModalStyles';
 import 'react-modal-login/dist/react-modal-login.css';
@@ -17,6 +18,7 @@ const LoginModal = () => {
     const [isLogin, setIsLogin] = useContext(AppContext);
 
     console.log("Login status: ", isLogin);
+    const navigate = useNavigate();
 
     const newUser = { name: '', surname: '', email: '', password: '' };
     const data = { email: '', password: '' }
@@ -39,6 +41,7 @@ const LoginModal = () => {
     const handleLogIn = (event) => {
         event.preventDefault();
         const storedList = JSON.parse(localStorage.getItem("usersList"));
+
         const loginState = () => {
             for (let user of storedList) {
                 if (user.email === data.email && user.password === data.password) {
@@ -51,6 +54,7 @@ const LoginModal = () => {
             return false;
         };
         setIsLogin(loginState);
+        navigate(process.env.PUBLIC_URL + '/vip/');
     };
 
     // Sign Up
