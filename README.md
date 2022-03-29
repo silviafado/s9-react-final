@@ -22,11 +22,11 @@ The goal of this project:
 # Instructions to use
 
 - Click Start on home page to enter the app.
-- Navigate through the pages using the menu navbar, you can either go for static visuals in Photos or Art pages, or more dynamic interactive to Videos page.
-- Use the Search form to search for any concept/word related to art and a mosaic of results will appear.
-- In Videos page you can select the right side videos to display in bigger format.
-- Login clicking the Login link in the navbar will open a pop-up to sign up and login. After logged in you will acces the VIP content.
-- Videos API credits only work in localhost:3000, if you only see loading is becaues credits are expired. They should be available the next day.
+- Navigate through the pages using the menu navbar. You can either go for static visuals in Photos or Art pages, or more dynamic interactive to Videos page.
+- Use the Search form to search for any concept/word related to art, and a mosaic of results will appear.
+- In Videos page you can select on the right side any video to display in bigger format on the left.
+- Login clicking the Login link in the navbar; it will open a pop-up to sign up and login. After logged in, you will acces the VIP content.
+- Videos API credits only work in localhost:3000, if you only see "Loading..." is becaues credits are expired. They should be available the next day.
 - ENJOY!!
 
 
